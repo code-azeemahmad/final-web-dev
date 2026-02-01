@@ -39,3 +39,9 @@ const red = (a, b) => {
 console.log(nums.reduce(red));
 
 console.log(nums.reduce((a, b) => a + b));
+
+// Array.from()
+
+let s = "AZEEM";
+
+console.log(Array.from(s));
