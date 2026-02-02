@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling in JS</title>
+    <style>
+        .child {
+            background-color: aliceblue;
+            border: 2px solid black;
+            padding: 14px;
+            margin: 14px;
+            cursor: pointer;
+        }
+        .childContainer {
+            background-color: rgb(157, 202, 239);
+            border: 2px solid rgb(255, 0, 0);
+            padding: 14px;
+            margin: 14px;
+        }
+        .container {
+            background-color: rgb(19, 145, 255);
+            border: 2px solid rgb(72, 255, 0);
+            padding: 14px;
+            margin: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="childContainer">
+            <div class="child">I am a child</div>
+        </section>
+    </div>
+    <script>
+        let child = document.querySelector(".child");
+        child.addEventListener("click", (e) => {
+            e.stopPropagation();
+            alert("Child is clicked!");
+        });
+        let childCont = document.querySelector(".childContainer");
+        childCont.addEventListener("click", (e) => {
+            e.stopPropagation();
+            alert("Child Container is clicked!");
+        });
+        let Cont = document.querySelector(".container");
+        Cont.addEventListener("click", () => {
+            alert("Container is clicked!");
+        });
+    </script>
+</body>
+</html>
+
+<!-- Event Bubbling -->
+<!-- When child is clicked, childContainer and container are automatically clicked
+because child lies inside childContainer which in turn lies inside container -->
+<!-- The alert propagates from child to the parent -->
+<!-- For example, I live in Pakistan, in South Asia, on Planet Earth -->
+<!-- e.stopPropagation(); stops propagation -->
