@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserting and removing elements using DOM</title>
+</head>
+<body>
+    <div class="container red bg-green">
+        <div class="box" style="color: blueviolet;">Hey! I am a box</div>
+        <div id="databox" class="box" data-createdBy = "Azeem">Hey! I am a box</div>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+
+    <script>
+        let div = document.createElement("div");
+        div.innerHTML = "I have been inserted <b>by Azeem</b>"
+        div.setAttribute("class", "created");
+        document.querySelector(".container").prepend(div);       // dynamically generate elements through js
+
+        let cont = document.querySelector(".container");
+        cont.insertAdjacentHTML("afterbegin", "<b>I am under the water</b>")
+
+    </script>
+</body>
+</html>
+
+
+<!-- data-createdBy = "Azeem", data attribute(custom attribute) to store info about an element -->
+<!-- data-key = value, pair -->
+
+<!-- node.append(e) -->
+<!-- node.prepend(e) -->
+<!-- node.before(e) -->
+<!-- node.after(e) -->
+<!-- node.replaceWith(e) -->
+
+<!-- node.insertAdjacentHTML/ Text/ Element-->
