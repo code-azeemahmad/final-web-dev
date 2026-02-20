@@ -1,0 +1,32 @@
+redux is an independent state management library.
+
+           |-------> REACT DOM
+REACT -----|
+           |-------> REACT Native
+
+
+           |-------> REACT Redux
+REDUX -----|
+
+we need both Redux and REACT Redux, just like REACT and REACT DOM
+
+we were facing problems while passing props from outer to inner
+
+FLUX before Redux(2015)
+
+dataflow is very strong in redux
+
+we were spreading old values in arrays while using context api, we did not want to lose them
+but what would happen if forget to spread?
+
+you should never mutate your state.
+functionality should be go thorough reducers
+
+REDUX-toolkit has built in middlewares, slicing
+
+Important concepts
+
+STORE - we take things from single source of truth like a global variable
+REDUCER - functionalities to manage mini stores in a stores
+useSelector - to select an item
+useDispatch - to dispatch/ send an item
